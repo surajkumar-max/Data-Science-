@@ -1,0 +1,17 @@
+defining the agenda  to abstract from the data sets
+cleaning the data
+converting the data frame to numric data frame and can be passed to Maching learing algorithum and models
+
+
+one hot encoding : 
+creating new column from the exiistng column with the prefix of existing columns and assing it a boolean vale 
+--> in case of no direct  corelatin exist between the parameters and need to  make unbiased
+.map function:
+
+
+encoded_ columnname = pd.getduplicates[column name], prefix:column name;
+fil_name = pd.concat[filename, encoded_columnname], axis =1;
+filename.drop([column name], inplace = "True";
+--->inplace = true for the direct moddification in data sets;
+directly assing numeric value to the colum of particluar type when theie exist a direct corellation  between the parameter and give the sense of higher .lower values
+--> file name[columns].map([key : value]
