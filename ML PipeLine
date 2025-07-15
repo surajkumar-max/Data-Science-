@@ -15,3 +15,5 @@ filename.drop([column name], inplace = "True";
 --->inplace = true for the direct moddification in data sets;
 directly assing numeric value to the colum of particluar type when theie exist a direct corellation  between the parameter and give the sense of higher .lower values
 --> file name[columns].map([key : value]
+--->categorical varaible
+-->ordinal relationship
