@@ -1,0 +1,72 @@
+## creating a inventoryfiles and sales files
+fd = open("Inventoryfile.txt" , "r")
+products  = fd.read().split("\n")
+fd.close()
+
+user_name = input("Enter the user_name:")
+Mobile_number = input("Enter the Mobile_number:")
+user_email = input("Enter the Email Id:")
+product_quan = int(input ("Enter the product_quantity:"))
+product_id = int(input("Enter the product_id:"))
+
+updating_inventory_list = []
+
+for product in products:
+    product_details = product.split(",")
+    if(int(product_details[0]) == product_id):
+        if(product_quan <= int(product_details[3])):
+            print("-"*20)
+            print("Name of the product:" , product_details[1])
+            print("Price of the product:" , product_details[2])
+            print("Total no of items :", product_quan)
+            print("Total Billing amount :", int(product_details[2]) * product_quan)
+            print("-"*20)
+            product_details[3] = str(int(product_details[3]) - product_quan)
+
+            fd = open("Sales.txt", "a")
+            sales = user_name +","+ Mobile_number+","+ user_email+","+ str(product_quan)+","+str(product_id)+","+ str(int(product_details[2]) * int(product_quan))+"\n"
+            fd.write(sales)
+            fd.close
+            
+        elif(product_quan > int(product_details[3])):
+             print("The required amoout is currntly Unavailable!")
+             print("would you like to buy the available amount")
+             print("If Yes type Y or No type N")
+             input("Enter your repsonce:")
+             if(ch == "y" or ch == "Y"):
+                 print("Name of the product:" , product_details[1])
+                 print("Price of the product:" , product_details[2])
+                 print("Total no of items :", product_detials[3])
+                 print("Total Billing amount :", int(product_details[2]) * int(product_details[3]))
+
+                 product_details[3] = "\0"
+
+                 fd = open("Sales.txt","a")
+                 fd = open("Sales.txt", "a")
+                 sales = user_name +","+ Mobile_number+","+ user_email+","+ str(product_quan)+","+str(product_id)+","+ str(int(product_details[2]) * int(product_quan)) +"\n"
+                 fd.write(sales)
+                 fd.close  
+
+
+    updating_inventory_list.append(product_details)
+
+List = []
+for element in updating_inventory_list:
+    prod = element[0]+","+ element[1]+","+element[2]+","+element[3]+"\n"
+    List.append(prod)
+
+List[-1] = List[-1][:-1]
+    
+    
+fd = open('Inventory.txt','w')
+
+for i in List:
+    fd.write(i)
+
+fd.close()
+   
+                 
+            
+            
+
+
